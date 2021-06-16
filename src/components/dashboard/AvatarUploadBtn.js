@@ -31,7 +31,6 @@ const AvatarUploadBtn = () => {
   const { profile } = useProfile();
 
   const [img, setImg] = useState(null);
-  console.log(img);
 
   const [isLoading, setIsLoading] = useState(false);
   const avatarEditorRef = useRef();
