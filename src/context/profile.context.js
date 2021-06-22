@@ -64,7 +64,7 @@ export const ProfileProvider = ({ children }) => {
           userStatusRef.off();
         }
 
-        database.ref(`./info/connected`).off();
+        database.ref(`.info/connected`).off();
 
         setProfile(null);
         setIsLoading(false);
