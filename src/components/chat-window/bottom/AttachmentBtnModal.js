@@ -28,7 +28,7 @@ const AttachmentBtnModal = ({ afterUpload }) => {
       const uploadPromises = fileList.map(f => {
         return storage
           .ref(`/chat/${chatId}`)
-          .cjild(Date.now() + f.name)
+          .child(Date.now() + f.name)
           .put(f.blobFile, {
             cacheControl: `public, max-age=${3600 * 24 * 3}`,
           });
@@ -36,7 +36,7 @@ const AttachmentBtnModal = ({ afterUpload }) => {
 
       const uploadSnapshots = await Promise.all(uploadPromises);
 
-      const shapePromises = uploadPromises.map(async snap => {
+      const shapePromises = uploadSnapshots.map(async snap => {
         return {
           contentType: snap.metadata.contentType,
           name: snap.metadata.name,
