@@ -48,3 +48,17 @@ export async function getUserUpdates(userId, keyToUpdate, value, db) {
 export function transformToArr(snapVal) {
   return snapVal ? Object.keys(snapVal) : [];
 }
+
+export function groupBy(array, groupingkeyFn) {
+  return array.reduce((result, item) => {
+    const groupingKey = groupingkeyFn(item);
+
+    if (!result[groupingKey]) {
+      result[groupingKey] = [];
+    }
+
+    result[groupingKey].push(item);
+
+    return result;
+  }, {});
+}
