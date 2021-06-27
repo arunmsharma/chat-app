@@ -17,4 +17,3 @@
 2. Sass
 3. Firebase
 
-To check the deployed version visit the link attached.
